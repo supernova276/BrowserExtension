@@ -1,10 +1,10 @@
 # Extensify New Tab Broswer Extension
 
-[Extensify](https://extensry.netlify.app/) is a super cool browser extension that greets you with a message according to the time of the day and shows different background on page refresh. With Extensry you can set your main/focus task of the day ansd also create your own todo.
+[browserextension](https://browserextension.onrender.com/) is a super cool browser extension that greets you with a message according to the time of the day and shows different background on page refresh. With Extensry you can set your main/focus task of the day ansd also create your own todo.
 
 
 ## List of features
-[Home Page](https://extensry.netlify.app/)
+[Home Page](https://browserextension.onrender.com/)
 - In the home page, you can start by adding your name and then press the enter key which will route you to the task page. If you refresh the home page you will see a different soothing background image.
 
 Task Page
@@ -18,36 +18,9 @@ Task Page
 
 ## Live Link
 
-https://extensry.netlify.app/
+https://browserextension.onrender.com/
 
-## Add Extension to Firefox
+## Github Link
 
-https://addons.mozilla.org/en-US/firefox/addon/prakash-extensry/
+https://github.com/supernova276/BrowserExtension/tree/main
 
-
-## Run Locally
-
-Clone the project by adding the following command in the terminal.
-Make sure your have git installed and added to path.
-
-```bash
-  git clone https://github.com/prakashsakari/browser-extension.git
-```
-
-Go to the project directory
-
-```bash
-  cd browser-extension
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm start
-```
