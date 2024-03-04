@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import{v4 as uuid} from "uuid";
 import  "./Todo.css"
@@ -35,13 +36,13 @@ export const Todo = () => {
     }
 
     const handleTodoCheckChange=(todoId)=>{
-        const updateTodoList=todoList.map(todo=>todoId===todo._i?{...todo,isCompleted: !todo.isCompleted}:todo)
+        const updateTodoList=todoList.map(todo=>todoId===todo.id?{...todo,isCompleted: !todo.isCompleted}:todo)
         setTodoList(updateTodoList)
         localStorage.setItem("todo",JSON.stringify(updateTodoList))
         
     }
     const handleDeleteTask=(todoId)=>{
-       const updateTodoList=todoList.filter( (todo)=>todo._id!==todoId)
+       const updateTodoList=todoList.filter( (todo)=>todo.id!==todoId)
        setTodoList(updateTodoList)
     //    the todo list will be updated on the next render
        localStorage.setItem("todo",JSON.stringify(updateTodoList))
@@ -54,12 +55,12 @@ export const Todo = () => {
         </div>
       <div className='todo-list'>
         {
-            todoList&& todoList.map(({todo,_id,isCompleted})=>{
+            todoList&& todoList.map(({todo,id,isCompleted})=>{
                  return (
-                    <div key={_id} className='todo-items d-flex flex-row'>
-                        <label className={` ${isCompleted? "strike-through " : ""}todo-label`} onChange={()=>handleTodoCheckChange(_id)}>
-                            <input type="checkbox" className='todo-check' checked={isCompleted}/>{todo}</label>
-                        <button className='button cursor' onClick={()=>handleDeleteTask(_id)}><span className="material-symbols-outlined">close</span></button>
+                    <div key={id} className='todo-items d-flex flex-row'>
+                        <label className={` ${isCompleted? "strike-through " : ""}todo-label`} >
+                            <input type="checkbox" className='todo-check' defaultChecked={isCompleted} onChange={()=>handleTodoCheckChange(id)}/>{todo}</label>
+                        <button className='button cursor' onClick={()=>handleDeleteTask(id)}><span className="material-symbols-outlined">close</span></button>
                     </div>
                  )
             })

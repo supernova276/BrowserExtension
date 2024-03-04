@@ -29,7 +29,8 @@ export const Tasks = () => {
             type:"TASK",
             payload:userTask
         })
-        if(new Date.getDate()!== Number(localStorage.getItem("date"))){
+        const today=new Date()
+        if(today.getDate()!== Number(localStorage.getItem("date"))){
           localStorage.removeItem("task")
           localStorage.removeItem("checkedStatus")
           localStorage.removeItem("date")
@@ -71,7 +72,8 @@ export const Tasks = () => {
             payload:e.target.value
            })
         localStorage.setItem("task",e.target.value)
-        localStorage.setItem("date",Date.getDate())
+        const today=new Date()
+        localStorage.setItem("date",today.getDate())
        }
     }
 
